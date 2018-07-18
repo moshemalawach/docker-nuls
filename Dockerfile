@@ -15,12 +15,13 @@ RUN tar zxf ../NULS-Wallet-linux64-1.0.0.tar.gz
 RUN rm ../NULS-Wallet-linux64-1.0.0.tar.gz
 
 ADD launch.sh /
+ADD modules.ini /nuls/conf/
 
 RUN chmod +x /launch.sh
 
 VOLUME /nuls/data /nuls/logs
 
 EXPOSE 6001/tcp
-EXPOSE 6003/tcp
-EXPOSE 6003/udp
+EXPOSE 8016/tcp
+EXPOSE 8016/udp
 CMD ["/bin/bash", "/launch.sh"]

@@ -3,6 +3,4 @@
 cd /nuls/bin/
 ./start.sh
 
-while true
-    do sleep 1
-done
+tail -f /nuls/logs/stdout.log
