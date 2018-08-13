@@ -5,14 +5,16 @@ MAINTAINER Moshe Malawach <moshe.malawach@protonmail.com>
 ENV LANG C.UTF-8
 
 RUN apt-get -y update
-RUN apt-get -y install megatools
+#RUN apt-get -y install megatools
+RUN apt-get -y install wget
 WORKDIR /
-run megadl 'https://mega.nz/#!76xgRAwY!gzBuFS459aCjmk-2Y9VYnHDgPLe4_UGPkAHQvgZek5M'
+#run megadl 'https://mega.nz/#!76xgRAwY!gzBuFS459aCjmk-2Y9VYnHDgPLe4_UGPkAHQvgZek5M'
+run wget https://nuls-usa-west.oss-us-west-1.aliyuncs.com/version1.0.1/NULS-Wallet-linux64-1.0.1.tar.gz
 RUN mkdir /nuls
 WORKDIR /nuls
 
-RUN tar zxf ../NULS-Wallet-linux64-1.0.0.tar.gz
-RUN rm ../NULS-Wallet-linux64-1.0.0.tar.gz
+RUN tar zxf ../NULS-Wallet-linux64-1.0.1.tar.gz
+RUN rm ../NULS-Wallet-linux64-1.0.1.tar.gz
 
 ADD launch.sh /
 ADD modules.ini /nuls/conf/
