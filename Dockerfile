@@ -19,7 +19,7 @@ RUN chmod +x /launch.sh
 
 VOLUME /nuls/data /nuls/logs
 
-EXPOSE 6001/tcp
+EXPOSE 8001/tcp
 EXPOSE 8003/tcp
 EXPOSE 8003/udp
 CMD ["/bin/bash", "/launch.sh"]
