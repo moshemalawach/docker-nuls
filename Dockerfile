@@ -7,10 +7,10 @@ RUN apt-get -y update && \
 
 WORKDIR /nuls
 
-RUN axel https://nuls-usa-west.oss-us-west-1.aliyuncs.com/1.1.3-beta3/NULS-Wallet-linux64-1.1.3-beta3.tar.gz
+RUN axel https://nuls-usa-west.oss-us-west-1.aliyuncs.com/1.1.3/NULS-Wallet-linux64-1.1.3.tar.gz
 
-RUN tar zxf NULS-Wallet-linux64-1.1.3-beta3.tar.gz
-RUN rm NULS-Wallet-linux64-1.1.3-beta3.tar.gz
+RUN tar zxf NULS-Wallet-linux64-1.1.3.tar.gz
+RUN rm NULS-Wallet-linux64-1.1.3.tar.gz
 
 ADD launch.sh /
 ADD modules.ini /nuls/conf/
@@ -19,7 +19,7 @@ RUN chmod +x /launch.sh
 
 VOLUME /nuls/data /nuls/logs
 
-EXPOSE 8001/tcp
-EXPOSE 8003/tcp
-EXPOSE 8003/udp
+EXPOSE 6001/tcp
+EXPOSE 8016/tcp
+EXPOSE 8016/udp
 CMD ["/bin/bash", "/launch.sh"]
