@@ -7,10 +7,10 @@ RUN apt-get -y update && \
 
 WORKDIR /nuls
 
-RUN axel http://nuls-usa-west.oss-us-west-1.aliyuncs.com/1.3.0/NULS-Wallet-linux64-1.3.0-beta.tar.gz
+RUN axel https://nuls-usa-west.oss-us-west-1.aliyuncs.com/1.2.2/NULS-Wallet-linux64-1.2.2-beta.tar.gz
 
-RUN tar zxf NULS-Wallet-linux64-1.3.0-beta.tar.gz
-RUN rm NULS-Wallet-linux64-1.3.0-beta.tar.gz
+RUN tar zxf NULS-Wallet-linux64-1.2.2-beta.tar.gz
+RUN rm NULS-Wallet-linux64-1.2.2-beta.tar.gz
 
 ADD launch.sh /
 ADD modules.ini /nuls/conf/test/
